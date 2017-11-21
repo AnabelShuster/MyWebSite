@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="cache-control" content="max-age=0" />
+		<meta http-equiv="cache-control" content="no-cache" />
+		<meta http-equiv="expires" content="0" />
+		<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+		<meta http-equiv="pragma" content="no-cache" />
+		<title>My Office Team Site File</title>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+		<script src="scripts/purl.js"></script>
+		<script src="scripts/scripts.js"></script>
+		<script>
+			jQuery.support.cors = true; // force cross-site scripting (as of jQuery 1.5)
+		</script>
+		<link href="https://code.jquery.com/ui/1.11.1/themes/start/jquery-ui.css" type="text/css" rel="Stylesheet" />
+		<style type="text/css">
+			label:after {
+				content:"\a";
+				white-space: pre;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="tabs">
+			<!-- Tab Creation -->
+			<ul id="TabList">
+				<!--<li><a href="#tabs-home">Office Team</a></li>-->
+				<li><a href="#tabs-serverStatus">Server Status</a></li>
+				<li><a href="#tabs-machines">Test Machines</a></li>
+				<li><a href="#tabs-production">Production Deployments</a></li>
+				<li><a href="#tabs-beta">Beta Deployments</a></li>
+				<!-- <li><a href="#tabs-manual">Manual Installations</a></li>
+				<li><a href="#tabs-CI">CI Builds</a></li> -->				
+			</ul>
+			
+			<!-- Home Tab 
+			<div id="tabs-home">
+				<p class="small8"><a href="javascript:setHomeCookie('OfficeTeam',365);"><font color="#0EBFE9">Set as home tab...</font></a></p>
+				<p>Any Home Page Content you want can go here...</p>
+			</div>-->
+			
+			<!-- Production Server Tab -->
+			<div id="tabs-production">
+				<p class="small8"><a href="javascript:setHomeCookie('OfficeTeam',365);"><font color="#0EBFE9">Set as home tab...</font></a></p>
+				<span id="productionClickOnce"></span>
+				<span id="lastProductionUpdate"></span>
+				<hr/>
+				<div class="small8">
+					<!-- Data -->
+					<p class="small8">To deploy the Office Integrations you need to install the Visual Studio tools for Microsoft Office redistributable located <a href="\\onbase.net\shares\PublicApps\Applications\Microsoft\Visual Studio"><font color="#0EBFE9">here</font></a>.</p>
+					<p class="small8">If you need new service locations added to these deployments, please e-mail <a href="mailto:Anabel.Shuster@onbase.com?subject=Deployment%20Service%20Locations"><font color="#0EBFE9">Anabel Shuster</font></a> to request them.</p>     
+					<p class="small8">A greyed image means that there is no deployment installed for that application.</p>
+				</div>
+				<div id="prodAccordion" class="accordion">
+					<h5>Office 2007 Integrations</h5>
+					<div id="office2007prod">
+						<a href="https://QAV-000865.hylandqa.net/Production Word 2007/WordAddin2007Production Word 2007.vsto"><img src="images/word2007.png" width="128" height="128" border="0" alt="Word 2007 Integration" /></a>
+						<a href="https://QAV-000865.hylandqa.net/Production Excel 2007/ExcelAddin2007Production Excel 2007.vsto"><img src="images/excel2007.png" width="128" height="128" border="0" alt="Excel 2007 Integration"/></a>
+						<a href="https://QAV-000865.hylandqa.net/Production PPT 2007/PowerPointAddin2007Production PPT 2007.vsto"><img src="images/ppt.png" width="128" height="128" border="0" alt="PowerPoint 2007 Integration"/></a>
+						<a href="https://QAV-000865.hylandqa.net/Production Outlook 2007/OutlookIntegration2007Production Outlook 2007.vsto"><img src="images/outlook_2007.png" width="128" height="128" border="0" alt="Outlook 2007 Integration" /></a>
+					</div>
+					<h5>Office 2010 Integrations</h5>
+					<div id="office2010prod">
+						<a href="https://QAV-000865.hylandqa.net/Production Word 2010/WordAddin2010Production Word 2010.vsto"><img src="images/word2010.png" width="128" height="128" border="0" alt="Word 2010 Integration" /></a>
+						<a href="https://QAV-000865.hylandqa.net/Production Excel 2010/ExcelAddin2010Production Excel 2010.vsto"><img src="images/excel2010.png" border="0" width="128" height="128" alt="Excel 2010 Integration"/></a>
+						<a href="https://QAV-000865.hylandqa.net/Production PPT 2010/PowerPointAddin2010Production PPT 2010.vsto"><img src="images/ppt2010.png" border="0" width="128" height="128" alt="PowerPoint 2010 Integration"/></a>
+						<a href="https://QAV-000865.hylandqa.net/Production Outlook 2010/OutlookIntegration2010Production Outlook 2010.vsto"><img src="images/outlook2010.png" border="0" width="128" height="128" alt="Outlook 2010 Integration" /></a>
+					</div>
+					<h5>Office 2013 Integrations</h5>
+					<div id="office2013prod">
+						<a href="https://QAV-000865.hylandqa.net/Production Word 2013/WordAddin2013Production Word 2013.vsto"><img src="images/word2013.png" width="128" height="128" border="0" alt="Word 2013 Integration" /></a>
+						<a href="https://QAV-000865.hylandqa.net/Production Excel 2013/ExcelAddin2013Production Excel 2013.vsto"><img src="images/excel2013.png" border="0" width="128" height="128" alt="Excel 2013 Integration"/></a>
+						<a href="https://QAV-000865.hylandqa.net/Production PPT 2013/PowerPointAddin2013Production PPT 2013.vsto"><img src="images/ppt2013.png" border="0" width="128" height="128" alt="PowerPoint 2013 Integration"/></a>
+						<a href="https://QAV-000865.hylandqa.net/Production Outlook 2013/OutlookIntegration2013Production Outlook 2013.vsto"><img src="images/outlook2013.png" border="0" width="128" height="128" alt="Outlook 2013 Integration" /></a>
+					</div>
+					<h5>Office 2016 Integrations</h5>
+					<div id="office2016prod">
+						<a href="https://QAV-000865.hylandqa.net/Production Word 2016/WordAddin2016Production Word 2016.vsto"><img src="images/word2016.png" width="128" height="128" border="0" alt="Word 2016 Integration" /></a>
+						<a href="https://QAV-000865.hylandqa.net/Production Excel 2016/ExcelAddin2016Production Excel 2016.vsto"><img src="images/excel2016.png" border="0" width="128" height="128" alt="Excel 2016 Integration"/></a>
+						<a href="https://QAV-000865.hylandqa.net/Production PPT 2016/PowerPointAddin2016Production PPT 2016.vsto"><img src="images/ppt2016.png" border="0" width="128" height="128" alt="PowerPoint 2016 Integration"/></a>
+						<a href="https://QAV-000865.hylandqa.net/Production Outlook 2016/OutlookIntegration2016Production Outlook 2016.vsto"><img src="images/outlook2016.png" border="0" width="128" height="128" alt="Outlook 2016 Integration" /></a>
+					</div>
+					
+					<h5>Other Products</h5>
+					<div id="otherprod">
+						<a href="https://QAV-000865.hylandqa.net/Production Template Builder 2007/DocumentCompositionConfigurationProduction Template Builder 2007.vsto"><img src="images/doccomp.png" height="128" width="128" border="0" alt="Template Builder" /></a>
+						<a href="https://QAV-000865.hylandqa.net/Production Template Builder 2010/DocumentCompositionConfiguration2010Production Template Builder 2010.vsto"><img src="images/doccomp2010.png" height="128" width="128" border="0" alt="Template Builder 2010" /></a> 
+						<a href="https://QAV-000865.hylandqa.net/Production Template Builder 2013/DocumentCompositionConfiguration2013Production Template Builder 2013.vsto"><img src="images/doccomp2013.png" height="128" width="128" border="0" alt="Template Builder 2013" /></a>
+					    <a href="https://QAV-000865.hylandqa.net/Production Template Builder 2016/DocumentCompositionConfiguration2016Production Template Builder 2016.vsto"><img src="images/doccomp2016.png" height="128" width="128" border="0" alt="Template Builder 2016" /></a>
+					</div>
+				</div>
+				<br />
+				<button id="updateProductionServerTime">Update Deployment Time</button>
+			</div>
+			
+			<!-- Beta Server Tab -->
+			<div id="tabs-beta">
+				<p class="small8"><a href="javascript:setHomeCookie('OfficeTeam',365);"><font color="#0EBFE9">Set as home tab...</font></a></p>
+				<span id="betaClickOnce"></span>
+				<span id="lastBetaUpdate"></span>
+				<hr/>
+				<div class="small8">
+				<!-- Data -->
+				<p class="small8">To deploy the Office Integrations you need to install the Visual Studio tools for Microsoft Office redistributable located <a href="\\onbase.net\shares\PublicApps\Applications\Microsoft\Visual Studio"><font color="#0EBFE9">here</font></a>.</p>
+				<p class="small8">If you need new service locations added to these deployments, please e-mail <a href="mailto:Anabel.Shuster@onbase.com?subject=Deployment%20Service%20Locations"><font color="#0EBFE9">Anabel Shuster</font></a> to request them.</p>     
+				<p class="small8">A greyed image means that there is no deployment installed for that application.</p>
+				</div>
+				<div id="betaAccordion" class="accordion">
+					<h5>Office 2007 Integrations</h5>
+					<div id="office2007beta">
+						<a href="https://QAV-001699.hylandqa.net/Beta Word 2007/WordAddin2007Beta Word 2007.vsto"><img src="images/word2007.png" width="128" height="128" border="0" alt="Word 2007 Integration" /></a>
+						<a href="https://QAV-001699.hylandqa.net/Beta Excel 2007/ExcelAddin2007Beta Excel 2007.vsto"><img src="images/excel2007.png" width="128" height="128" border="0" alt="Excel 2007 Integration"/></a>
+						<a href="https://QAV-001699.hylandqa.net/Beta PowerPoint 2007/PowerPointAddin2007Beta PowerPoint 2007.vsto"><img src="images/ppt.png" width="128" height="128" border="0" alt="PowerPoint 2007 Integration"/></a>
+						<a href="https://QAV-001699.hylandqa.net/Beta Outlook 2007/OutlookIntegration2007Beta Outlook 2007.vsto"><img src="images/outlook_2007.png" width="128" height="128" border="0" alt="Outlook 2007 Integration" /></a>
+					</div>
+					<h5>Office 2010 Integrations</h5>
+					<div id="office2010beta">
+						<a href="https://QAV-001699.hylandqa.net/Beta Word 2010/WordAddin2010Beta Word 2010.vsto"><img src="images/word2010.png" width="128" height="128" border="0" alt="Word 2010 Integration" /></a>
+						<a href="https://QAV-001699.hylandqa.net/Beta Excel 2010/ExcelAddin2010Beta Excel 2010.vsto"><img src="images/excel2010.png" border="0" width="128" height="128" alt="Excel 2010 Integration"/></a>
+						<a href="https://QAV-001699.hylandqa.net/Beta PowerPoint 2010/PowerPointAddin2010Beta PowerPoint 2010.vsto"><img src="images/ppt2010.png" border="0" width="128" height="128" alt="PowerPoint 2010 Integration"/></a>
+						<a href="https://QAV-001699.hylandqa.net/Beta Outlook 2010/OutlookIntegration2010Beta Outlook 2010.vsto"><img src="images/outlook2010.png" border="0" width="128" height="128" alt="Outlook 2010 Integration" /></a>
+					</div>
+					<h5>Office 2013 Integrations</h5>
+					<div id="office2013beta">
+						<a href="https://QAV-001699.hylandqa.net/Beta Word 2013/WordAddin2013Beta Word 2013.vsto"><img src="images/word2013.png" width="128" height="128" border="0" alt="Word 2013 Integration" /></a>
+						<a href="https://QAV-001699.hylandqa.net/Excel 2013/ExcelAddin2013Excel 2013.vsto"><img src="images/excel2013.png" border="0" width="128" height="128" alt="Excel 2013 Integration"/></a>
+						<a href="https://QAV-001699.hylandqa.net/Beta PowerPoint 2013/PowerPointAddin2013Beta PowerPoint 2013.vsto"><img src="images/ppt2013.png" border="0" width="128" height="128" alt="PowerPoint 2013 Integration"/></a>
+						<a href="https://QAV-001699.hylandqa.net/Beta Outlook 2013/OutlookIntegration2013Beta Outlook 2013.vsto"><img src="images/outlook2013.png" border="0" width="128" height="128" alt="Outlook 2013 Integration" /></a>
+						</div>
+					<h5>Office 2016 Integrations</h5>
+					<div id="office2016beta">
+						<a href="https://QAV-001699.hylandqa.net/Word 2016/WordAddin2016Word 2016.vsto"><img src="images/word2016.png" width="128" height="128" border="0" alt="Word 2016 Integration" /></a>
+						<a href="https://QAV-001699.hylandqa.net/Excel 2016/ExcelAddin2016Excel 2016.vsto"><img src="images/excel2016.png" border="0" width="128" height="128" alt="Excel 2016 Integration"/></a>
+						<a href="https://QAV-001699.hylandqa.net/PPT 2016/PowerPointAddin2016PPT 2016.vsto"><img src="images/ppt2016.png" border="0" width="128" height="128" alt="PowerPoint 2016 Integration"/></a>
+						<a href="https://QAV-001699.hylandqa.net/Outlook 2016/OutlookIntegration2016Outlook 2016.vsto"><img src="images/outlook2016.png" border="0" width="128" height="128" alt="Outlook 2016 Integration" /></a>
+					</div>
+					<h5>Other Products</h5>
+					<div id="otherbeta">
+						<a href="https://QAV-001699.hylandqa.net/Beta Unity Client/UnityClientBeta Unity Client.application"><img src="images/Unity_Client_newstyle14_256.png" height="128" width="128" border="0" alt="Unity Client" /></a>
+						<a href="http://QAV-001699.hylandqa.net/Beta Doc Comp/DocumentCompositionConfigurationBeta Doc Comp.vsto"><img src="images/documentcomposition.png" height="128" width="128" border="0" alt="Document Composition" /></a>
+						<a href="http://QAV-001699.hylandqa.net/Beta Doc Comp 2010/DocumentCompositionConfiguration2010Beta Doc Comp 2010.vsto"><img src="images/doccomp2010.png" height="128" width="128" border="0" alt="Document Composition 2010" /></a> 
+						<a href="http://QAV-001699.hylandqa.net/Beta Doc Comp 2013/DocumentCompositionConfiguration2013Beta Doc Comp 2013.vsto"><img src="images/doccomp2013.png" height="128" width="128" border="0" alt="Document Composition 2013" /></a>
+						<a href="https://QAV-001699.hylandqa.net/TemplateBuilder2016Template Builder 2016 beta/DocumentCompositionConfiguration2016Template Builder 2016 beta.vsto"><img src="images/doccomp2016.png" height="128" width="128" border="0" alt="Template Builder 2016" /></a>
+					</div>
+				</div>
+				<br />
+				<button id="updateBetaServerTime">Update Deployment Time</button>
+			</div>
+			
+			<!-- Manual Install Tab -->
+<!--
+				<div id="tabs-manual">
+				<p class="small8"><a href="javascript:setHomeCookie('OfficeTeam',365);">Set as home tab...</a></p>
+			</div>
+ -->			
+ 
+			<!-- CI Builds Tab -->
+<!--
+				<div id="tabs-CI">
+				<p class="small8"><a href="javascript:setHomeCookie('OfficeTeam',365);">Set as home tab...</a></p>
+			</div>
+ -->			
+ 
+			<!-- Server Status Tab -->
+			<div id="tabs-serverStatus">
+				<p class="small8"><a href="javascript:setHomeCookie('OfficeTeam',365);"><font color="#0EBFE9">Set as home tab...</font></a></p>
+				<h3>Office Team Servers</h3>
+				<hr />
+				<h4>Core Services Installations</h4>
+				<p class="small8"><a href="javascript:checkURIs();"><font color="#0EBFE9">Refresh</font></a> server status.</p>
+				<div id="statusAccordion" class="accordion">
+					<h5>16.9 Internal Servers </h5>
+					<table border="1" width="100%" cellspacing="1" id="serviceServer">
+							<thead>
+								<tr>
+									<th>Server Name</th>
+									<th>Type</th>
+									<th>Virtual Directory</th>
+									<th>OnBase Version</th>
+									<th>Status</th>
+									<th>Recycle</th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+					</table>
+					<h5>17.0 Production Servers</h5>
+					<table border="1" width="100%" cellspacing="1" id="productionServer">
+							<thead>
+								<tr>
+									<th>Server Name</th>
+									<th>Type</th>
+									<th>Virtual Directory</th>
+									<th>OnBase Version</th>
+									<th>Status</th>
+									<th>Recycle</th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+					</table>
+					<h5>17.1 Beta Servers</h5>
+					<table border="1" width="100%" cellspacing="1" id="betaServer">
+							<thead>
+								<tr>
+									<th>Server Name</th>
+									<th>Type</th>
+									<th>Virtual Directory</th>
+									<th>OnBase Version</th>
+									<th>Status</th>
+									<th>Recycle</th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+					</table>
+				</div>
+			</div>
+			
+			<!-- Machine Information Tab -->
+			<div id="tabs-machines">
+				<p class="small8"><a href="javascript:setHomeCookie('OfficeTeam',365);"><font color="#0EBFE9">Set as home tab...</font></a></p>
+				<h3>Office Team Test Machines</h3>
+				<table border="1" width="100%" cellspacing="1" id="officeMachines">
+						<thead>
+							<tr>
+								<th>Machine Name</th>
+								<th>Operating System</th>
+								<th>Office / Lotus Version</th>
+								<th>Browser Version</th>
+								<th>Purpose</th>
+								<th>Domain</th>
+								<th>Owner</th>
+								<th>Update</th>
+							</tr>
+						</thead>
+						<tbody id="machineTbody">
+						</tbody>
+				</table>
+				<button id="addNewMachine">Add New Machine</button>
+			</div>
+	</body>
+</html>
